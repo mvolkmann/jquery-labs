@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>U.S. Zip Code Lookup</title>
+    <link rel="stylesheet" type="text/css" href="demo.css"/>
+    <script src="../../jquery-latest.min.js"></script>
+    <script src="demo.js"></script>
+  </head>
+  <body>
+    <h1>U.S. Zip Code Lookup</h1>
+    <form>
+      <input name="username" type="hidden" value="mvolkmann">
+      <table>
+        <tr>
+          <td class="label">Postal Code:</td>
+          <td><input id="zip" name="postalcode"
+            type="text" size="5" value="63304"/></td>
+          <td><input id="lookup" type="button" value="Lookup"></td>
+        </tr>
+        <tr>
+          <td class="label">City:</td>
+          <td id="city"></td>
+        </tr>
+        <tr>
+          <td class="label">State:</td>
+          <td id="state"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

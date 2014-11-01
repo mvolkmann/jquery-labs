@@ -1,0 +1,38 @@
+@charset 'UTF-8';
+
+.label {
+  color: blue;
+  font-weight: bold;
+  text-align: right;
+}
+
+#photoTable {
+  border-collapse: collapse;
+}
+
+#photoTable td:hover {
+  background-color: #fdd;
+  color: blue;
+  font-weight: bold;
+}
+
+#photoTable td, #photoTable th {
+  border: solid black 2px;
+}
+
+#photoTable tr:nth-child(even) {
+  background-color: #dfd;
+}
+
+#photoTable tr:nth-child(odd) {
+  background-color: #ffd;
+}
+
+.photo {
+  height: 200px;
+}
+
+.thumbnail {
+  height: 100px;
+  margin: 2px;
+}

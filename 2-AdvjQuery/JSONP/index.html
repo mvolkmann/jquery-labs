@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter User Lookup</title>
+    <link rel="stylesheet" type="text/css" href="demo.css"/>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="demoTwitter.js"></script>
+  </head>
+  <body>
+    <h1>Twitter User Lookup</h1>
+    <p>
+      This no longer works because Twitter now requires
+      use of OAuth and I haven't gotten that to work yet.
+    </p>
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td class="label">Twitter Username:</td>
+          <td>
+            <input id="username" name="username"
+              type="text" size="20" value="mark_volkmann">
+            <input id="lookup" type="button" value="Lookup">
+          </td>
+        </tr>
+        <tr>
+          <td class="label">Name:</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td class="label">Location:</td>
+          <td id="location"></td>
+        </tr>
+        <tr>
+          <td class="label">Home Page:</td>
+          <td><a id="homepage" href=""></a></td>
+        </tr>
+        <tr>
+          <td class="label">Description:</td>
+          <td id="description"></td>
+        </tr>
+        <tr>
+          <td class="label">Photo:</td>
+          <td><img id="photo" src="" alt=""></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

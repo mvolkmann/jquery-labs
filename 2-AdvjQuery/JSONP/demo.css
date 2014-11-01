@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+
+.label {
+  color: blue;
+  font-weight: bold;
+  text-align: right;
+}
+
+h1, table {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+h1 {
+  margin-top: 15px;
+  width: 300px;
+}

@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+
+/*------------------------------------------------------------------------*/
+
+h1, h2, input, td, th, .label {
+  font-family: "Trebuchet MS", Tahoma, Verdana, Arial, sans-serif;
+}
+
+h1, h2, hr {
+  color: #C77405;
+}
+
+td, th, .label {
+  color: #1C94C4;
+}
+
+input, .label {
+  font-size: 1.1em;
+}
+
+/*------------------------------------------------------------------------*/
+
+.label {
+  font-weight: bold;
+  text-align: right;
+}
+
+.layout {
+  border: solid black 5px;
+}
+
+.photo {
+  height: 200px;
+}
+
+.thumbnail {
+  height: 100px;
+  margin: 2px;
+}
+
+.ui-selected {
+  border-color: red;
+}
+
+/*------------------------------------------------------------------------*/
+
+#photoTable {
+  border-collapse: collapse;
+}
+
+#photoTable td, #photoTable th {
+  border: solid #C77405 2px;
+}
+
+#photoTable tr:nth-child(even) {
+  background-color: #dfd;
+}
+
+#photoTable tr:nth-child(odd) {
+  background-color: #ffd;
+}
+
+#scaleSlider {
+  margin-bottom: 10px;
+}

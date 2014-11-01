@@ -1,0 +1,7 @@
+@charset 'UTF-8';
+
+#haiku {
+  border: solid blue 5px;
+  padding: 5px;
+  width: 220px;
+}

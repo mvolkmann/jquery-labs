@@ -1,0 +1,13 @@
+#container {
+  height: 50px;
+  width: 300px;
+}
+
+#value {
+  font-family: monospace;
+  font-size: 18pt;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  top: -32px;
+}

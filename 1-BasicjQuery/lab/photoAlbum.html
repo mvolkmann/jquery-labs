@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Photo Album</title>
+    <link rel="stylesheet" type="text/css" href="photoAlbum.css"/>
+    <script src="../../jquery-latest.min.js"></script>
+    <script src="photoAlbum.js"></script>
+  </head>
+  <body>
+    <h1>Photo Album</h1>
+    <hr>
+
+    <table>
+      <tr>
+        <td class="label">Photo URL:</td>
+        <td><input id="url" type="text" size="80"></td>
+      </tr>
+      <tr>
+        <td class="label">Photo Description:</td>
+        <td><input id="desc" type="text" size="80"></td>
+      </tr>
+    </table>
+
+    <div>
+      <input id="add" type="button" value="Add">
+      <input id="delete" type="button" value="Delete">
+    </div>
+
+    <hr>
+    <table id="photoTable">
+      <tr><th>Select</th><th>Photo</th><th>Description</th></tr>
+    </table>
+  </body>
+</html>
