@@ -1,0 +1,15 @@
+{
+  "name": "Twitter",
+  "version": "1.0.0",
+  "description": "Twitter user lookup",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "R. Mark Volkmann",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.10.1",
+    "oauth": "^0.9.12"
+  }
+}

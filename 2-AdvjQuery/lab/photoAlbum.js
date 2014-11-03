@@ -1,11 +1,21 @@
-/*global $: false, alert: false, document: false */
+/*global $: false, alert: false, document: false, OAuth: false */
 'use strict';
+
+var token = {
+  public: '87388cba5de9031f8f7319674ef9a5a6',
+  secret: 'e6e1d778d5cf7c08'
+};
+
+var oauth = OAuth({
+  consumer: token,
+  signature_method: 'HMAC-SHA1'
+});
 
 var pa = {}; // namespace
 pa.flickr = {};
 //pa.flickr.apiKey = '8151c3cb6c3aa591ce2c7c627d476548';
 pa.flickr.apiKey = '87388cba5de9031f8f7319674ef9a5a6';
-pa.flickr.apiURL = 'http://api.flickr.com/services/rest/';
+pa.flickr.apiURL = 'https://api.flickr.com/services'; // '/rest/';
 
 // Adds a row to the photo table for the entered URL and description.
 pa.addPhoto = function () {
@@ -73,7 +83,20 @@ pa.flickrCall = function (method, data, callback) {
   data.method = method;
   data.nojsoncallback = 1;
 
-  $.getJSON(pa.flickr.apiURL, data, callback);
+  console.log('photoAlbum.js flickrCall: pa.flickr.apiURL =', pa.flickr.apiURL);
+  console.log('photoAlbum.js flickrCall: data =', data);
+  //$.getJSON(pa.flickr.apiURL, data, callback);
+  $.ajax({
+    cache: false,
+    data: oauth.authorize(data, token),
+    dataType: 'json',
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-cache, must-revalidate'
+    },
+    success: callback,
+    url: pa.flickr.apiURL
+  });
 };
 
 // Gets the names of all the photosets for a given Flickr user id.

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitter User Lookup</title>
+    <link rel="stylesheet" href="demo.css"/>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="demo.js"></script>
+  </head>
+  <body>
+    <h1>Twitter User Lookup</h1>
+    <div class="form">
+      <div>
+        <label>Twitter Username</label>
+        <input id="screenName" name="screenName"
+          type="text" size="20" value="mark_volkmann">
+        <button id="lookup">Lookup</button>
+      </div>
+      <div>
+        <label>Name</label> <span id="name"></span>
+      </div>
+      <div>
+        <label>Location</label> <span id="location"></label>
+      </div>
+      <div>
+        <label>Home Page</label> <span><a id="homepage"></a></label>
+      </div>
+      <div>
+        <label>Description</label> <span id="description"></label>
+      </div>
+      <div>
+        <label>Photo</label> <img id="photo">
+      </div>
+    </div>
+  </body>
+</html>

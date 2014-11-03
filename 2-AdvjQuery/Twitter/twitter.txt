@@ -1,0 +1,6 @@
+Twitter OAuth Settings
+
+Consumer key: d7NMR3Lp7zQukW1RorWw
+Consumer secret: yjK5W66F14cNoJwqjJLWU2OrHjMIV4GG3gOB9wFOy0
+Access token: 16169402-FUMRgqlG7czFu9lJuRt3f21gtD2kwkKoyFI6kjJM8
+Access token secret: YsyixWYjuqfApS3CDsIMR0HMKUqjadS9HY9HkO41V4

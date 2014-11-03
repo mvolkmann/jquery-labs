@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Photo Album</title>
+    <link rel="stylesheet" type="text/css" href="photoAlbum.css"/>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+    <script src="oauth-1.0a.js"></script>
+    <script src="photoAlbum.js"></script>
+  </head>
+  <body>
+    <h1>Photo Album</h1>
+    <hr>
+
+    <div>
+      <h3>Flickr</h3>
+      <span class="label">User Name:</span>
+      <input id="flickrUserName" type="text" size="20"
+        value="mark_volkmann">
+      <input id="getPhotoSets" type="button" value="Get Photosets">
+    </div>
+    <div id="photoSets"></div>
+    <div id="photos"></div>
+    <hr>
+
+    <table>
+      <tr>
+        <td class="label">Photo URL:</td>
+        <td><input id="url" type="text" size="80"></td>
+      </tr>
+      <tr>
+        <td class="label">Photo Description:</td>
+        <td><input id="desc" type="text" size="80"></td>
+      </tr>
+    </table>
+
+    <div>
+      <input id="add" type="button" value="Add">
+      <input id="delete" type="button" value="Delete">
+    </div>
+
+    <hr>
+    <table id="photoTable">
+      <tr><th>Select</th><th>Photo</th><th>Description</th></tr>
+    </table>
+  </body>
+</html>
