@@ -1,7 +1,6 @@
-  Volkmann Photo Album
+  Flickr Data
 
-  Key:
-  87388cba5de9031f8f7319674ef9a5a6
-
-  Secret:
-  e6e1d778d5cf7c08
+  User ID: 61878924@N06
+  Consumer Key: 87388cba5de9031f8f7319674ef9a5a6
+  Consumer Secret: e6e1d778d5cf7c08
+  API Key: 0a18bc68c81a99b40b43bf6b098c7cca
