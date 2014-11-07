@@ -102,11 +102,10 @@
           var button, name;
           Object.keys(photoSets).forEach(function (name) {
             var id = photoSets[name];
-            button = $('<button>');
-            button.attr('id', 'ps' + id);
-            button.attr('type', 'button');
-            button.text(name);
-            button.addClass('photoSetButton');
+            button = $('<button>').
+              attr('id', 'ps' + id).
+              text(name).
+              addClass('photoSetButton');
             div.append(button);
           });
         });

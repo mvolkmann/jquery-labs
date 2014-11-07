@@ -1,5 +1,11 @@
 @charset 'UTF-8';
 
+button {
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
 .label {
   color: blue;
   font-weight: bold;
