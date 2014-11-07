@@ -228,11 +228,12 @@ pa.loadFlickrPhoto = function (photo) {
     '.static.flickr.com/' + photo.server + '/' +
     photo.id + '_' + photo.secret + '.jpg';
   div = $('#photos');
-  img = $('<img>');
-  img.attr('id', 'p' + photo.id);
-  img.attr('src', src);
-  img.attr('alt', photo.title);
-  img.attr('title', photo.title);
+  img = $('<img>', {
+    id: 'p' + photo.id,
+    src: url,
+    alt: photo.title,
+    title: photo.title
+  });
   img.addClass('thumbnail');
   div.append(img);
 };

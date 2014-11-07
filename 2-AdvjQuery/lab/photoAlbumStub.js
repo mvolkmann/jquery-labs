@@ -61,11 +61,12 @@
     // TODO: http://www.flickr.com/services/api/misc.urls.html.
     url = ___;
     div = $('#photos');
-    img = $('<img>');
-    img.attr('id', 'p' + photo.id);
-    img.attr('src', url);
-    img.attr('alt', photo.title);
-    img.attr('title', photo.title);
+    img = $('<img>', {
+      id: 'p' + photo.id,
+      src: url,
+      alt: photo.title,
+      title: photo.title
+    });
     img.addClass('thumbnail');
     div.append(img);
   }

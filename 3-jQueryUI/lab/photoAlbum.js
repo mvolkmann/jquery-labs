@@ -152,11 +152,12 @@
           '.static.flickr.com/' + photo.server + '/' +
               photo.id + '_' + photo.secret + '.jpg';
     div = $('#photos');
-    img = $('<img>');
-    img.attr('id', 'p' + photo.id);
-    img.attr('src', url);
-    img.attr('alt', photo.title);
-    img.attr('title', photo.title);
+    img = $('<img>', {
+      id: 'p' + photo.id,
+      src: url,
+      alt: photo.title,
+      title: photo.title
+    });
     img.addClass('thumbnail');
     div.append(img);
   }
@@ -200,11 +201,10 @@
           var button, name;
           Object.keys(photoSets).forEach(function (name) {
             var id = photoSets[name];
-            button = $('<button>');
-            button.attr('id', 'ps' + id);
-            button.attr('type', 'button');
-            button.text(name);
-            button.addClass('photoSetButton');
+            button = $('<button>').
+              attr('id', 'ps' + id).
+              text(name).
+              addClass('photoSetButton');
             div.append(button);
           });
         });
