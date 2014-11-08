@@ -34,7 +34,7 @@
     tr.append('<td>' + desc + '</td>');
 
     td = $('<td>');
-    input = $('<input class="date" size="10" type="text"/>');
+    input = $('<input size="10" type="text">');
     input.datepicker();
     td.append(input);
     tr.append(td);
@@ -60,7 +60,7 @@
     }
 
     arrangeDialog.dialog('close');
-    dumpZs();
+    //dumpZs();
   }
 
   // Deletes all the selected rows in the photo table.
@@ -140,7 +140,6 @@
       }
     });
 
-    //$('#layoutArea').selectable({selected: selectedImage});
     $('#layoutArea').selectable({filter: 'img'});
   }
 
@@ -205,7 +204,8 @@
             button = $('<button>').
               attr('id', 'ps' + id).
               text(name).
-              addClass('photoSetButton');
+              addClass('photoSetButton').
+              button(); // make it a jQuery UI button
             div.append(button);
           });
         });
@@ -280,7 +280,7 @@
 
     $(document).on('click', 'img.thumbnail', selectFlickrPhoto);
 
-    $('body input[type="button"]').button();
+    $('button').button();
 
     $('.label').addClass('ui-widget');
 
@@ -309,18 +309,15 @@
     });
 
     $('#layoutArea').on('contextmenu', 'img', function (event) {
-      console.log('photoAlbum.js setupArrangeDialog: x =', event.pageX);
-      console.log('photoAlbum.js setupArrangeDialog: y =', event.pagey);
       rightClicked = $(this);
       arrangeDialog.dialog(
         'option',
         'position',
         {
           my: 'left top',
-         at: 'left+' + event.pageX + ' top+' + event.pageY,
-         of: window
+          at: 'left+' + event.pageX + ' top+' + event.pageY,
+          of: window
         }
-        //[event.pageX, event.pageY]
       );
       arrangeDialog.dialog('open');
       return false; // prevent browser context menu from appearing
