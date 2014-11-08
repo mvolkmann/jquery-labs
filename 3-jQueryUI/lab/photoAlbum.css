@@ -6,10 +6,12 @@ button {
   padding: 5px;
 }
 
-.label {
-  color: blue;
-  font-weight: bold;
-  text-align: right;
+#layoutArea img {
+  border: solid transparent 3px;
+}
+
+#layoutArea img.ui-selected {
+  border-color: red;
 }
 
 #photoTable {
@@ -32,6 +34,12 @@ button {
 
 #photoTable tr:nth-child(odd) {
   background-color: #ffd;
+}
+
+.label {
+  color: blue;
+  font-weight: bold;
+  text-align: right;
 }
 
 .photo {

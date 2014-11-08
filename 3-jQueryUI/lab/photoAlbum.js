@@ -26,7 +26,7 @@
 
     tr = $('<tr>');
     tr.append('<td><input type="checkbox"/></td>');
-    img = $('<img>', { src: url });
+    img = $('<img>', {alt: desc, src: url});
     img.addClass('photo');
     td = $('<td>');
     td.append(img);
@@ -44,8 +44,8 @@
 
   function changeZ(z) {
     rightClicked.css('z-index', z);
-    lowestZ = Math.min(pa.lowestZ, z);
-    highestZ = Math.max(pa.highestZ, z);
+    lowestZ = Math.min(lowestZ, z);
+    highestZ = Math.max(highestZ, z);
 
     if (z < 0) {
       // Due to http://bugs.jqueryui.com/ticket/4461 which says
@@ -53,7 +53,7 @@
       // make all z-index values positive.
       layoutArea.children().each(function (index, node) {
         var jq = $(node);
-        jq.css('z-index', pa.getZ(jq) - z);
+        jq.css('z-index', getZ(jq) - z);
       });
       lowestZ -= z;
       highestZ -= z;
@@ -82,7 +82,7 @@
   function dumpZs() {
     layoutArea.children().each(function (index, node) {
       var img = $(node);
-      console.log(img.attr('alt') + ' - z=' + pa.getZ(img));
+      console.log(img.attr('alt') + ' - z=' + getZ(img));
     });
   }
 
@@ -98,7 +98,7 @@
   function getAtZ(z) {
     var jqAtZ;
 
-    pa.layoutArea.children().each(function (index, node) {
+    layoutArea.children().each(function (index, node) {
       var jq = $(node);
       if (getZ(jq) === z) {
         jqAtZ = jq;
@@ -127,12 +127,12 @@
       // If layoutArea doesn't already contain this image, add it.
       img = layoutArea.children('img[src="' + src + '"]');
       if (img.size() === 0) {
-        newImg = $('<img>', { alt: alt, src: src });
+        newImg = $('<img>', {alt: alt, src: src});
         newImg.data('heightPercentage', layoutPercent);
         newImg.css('height', layoutPercent + '%');
         newImg.css('position', 'absolute');
         highestZ += 1;
-        newImg.css('z-index', pa.highestZ);
+        newImg.css('z-index', highestZ);
         newImg.addClass('layout');
 
         newImg.draggable();
@@ -140,7 +140,8 @@
       }
     });
 
-    $('#layoutArea').selectable({selected: selectedImage});
+    //$('#layoutArea').selectable({selected: selectedImage});
+    $('#layoutArea').selectable({filter: 'img'});
   }
 
   // Displays a thumbnail of a given photo
@@ -263,7 +264,7 @@
     deleteButton.attr('disabled', true);
     deleteButton.click(deletePhotos);
 
-    $('#mode').click(pa.toggleMode);
+    $('#mode').click(toggleMode);
     entry = $('#entry');
     photoTable = $('#photoTable');
     layout = $('#layout');
@@ -284,11 +285,11 @@
     $('.label').addClass('ui-widget');
 
     $('#scaleSlider').slider({
-      change: pa.scaleImages,
+      change: scaleImages,
       min: 10, // don't let images disappear
       max: 100,
-      slide: pa.scaleImages,
-      value: pa.layoutPercent
+      slide: scaleImages,
+      value: layoutPercent
     });
 
     $('#layoutArea').on('click', 'img', selectImage);
@@ -308,11 +309,18 @@
     });
 
     $('#layoutArea').on('contextmenu', 'img', function (event) {
+      console.log('photoAlbum.js setupArrangeDialog: x =', event.pageX);
+      console.log('photoAlbum.js setupArrangeDialog: y =', event.pagey);
       rightClicked = $(this);
       arrangeDialog.dialog(
         'option',
         'position',
-        [event.pageX, event.pageY]
+        {
+          my: 'left top',
+         at: 'left+' + event.pageX + ' top+' + event.pageY,
+         of: window
+        }
+        //[event.pageX, event.pageY]
       );
       arrangeDialog.dialog('open');
       return false; // prevent browser context menu from appearing
@@ -327,7 +335,7 @@
     });
 
     $('#forward').click(function () {
-      swapZ(getZ(pa.rightClicked) + 1);
+      swapZ(getZ(rightClicked) + 1);
     });
 
     $('#front').click(function () {
@@ -354,7 +362,7 @@
       jq1.css('z-index', z2);
       jq2.css('z-index', z1);
     }
-    dumpZs(); // for debugging
+    //dumpZs(); // for debugging
     arrangeDialog.dialog('close');
   }
 
@@ -363,19 +371,19 @@
     var button, buttonText;
 
     button = $(this);
-    buttonText = button.val();
+    buttonText = button.text();
 
     if (buttonText === 'Layout Mode') {
       entry.hide();
       photoTable.hide();
       layout.show();
-      button.val('Entry Mode');
+      button.text('Entry Mode');
       layoutPhotos();
     } else {
       layout.hide();
       entry.show();
       photoTable.show();
-      button.val('Layout Mode');
+      button.text('Layout Mode');
     }
   }
 

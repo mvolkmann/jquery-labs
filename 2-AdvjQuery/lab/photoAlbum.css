@@ -6,12 +6,6 @@ button {
   padding: 5px;
 }
 
-.label {
-  color: blue;
-  font-weight: bold;
-  text-align: right;
-}
-
 #photoTable {
   border-collapse: collapse;
 }
@@ -32,6 +26,12 @@ button {
 
 #photoTable tr:nth-child(odd) {
   background-color: #ffd;
+}
+
+.label {
+  color: blue;
+  font-weight: bold;
+  text-align: right;
 }
 
 .photo {
