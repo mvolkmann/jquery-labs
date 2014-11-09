@@ -23,7 +23,7 @@
 
     tr = $('<tr>');
     tr.append('<td><input type="checkbox"/></td>');
-    img = $('<img>', { src: url });
+    img = $('<img>', {src: url});
     img.addClass('photo');
     td = $('<td>');
     td.append(img);
