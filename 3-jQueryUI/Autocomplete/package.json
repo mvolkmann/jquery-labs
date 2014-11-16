@@ -1,0 +1,17 @@
+{
+  "name": "Autocomplete",
+  "version": "1.0.0",
+  "description": "jQuery class Autocompletion demo",
+  "main": "artistserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node artistserver.js"
+  },
+  "author": "R. Mark Volkmann",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "*",
+    "http": "*",
+    "url": "*"
+  }
+}
