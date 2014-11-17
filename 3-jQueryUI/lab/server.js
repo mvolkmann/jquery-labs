@@ -2,7 +2,7 @@
 'use strict';
 
 var express = require('express');
-var OAuth = require('OAuth').OAuth;
+var OAuth = require('oauth').OAuth;
 var qs = require('querystring');
 
 var app = express();
