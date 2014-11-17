@@ -301,7 +301,7 @@ mp.getMealCount = function () {
 
 mp.getPossibleItems = function (req, callback) {
   $.ajax({
-    url: 'http://localhost:3000',
+    url: 'http://localhost:3000/possible-items',
     dataType: 'jsonp',
     data: {
       term: req.term
