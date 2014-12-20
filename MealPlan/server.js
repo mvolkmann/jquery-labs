@@ -38,5 +38,6 @@ app.get('/possible-items', function (req, res) {
 });
 
 var PORT = 3000;
-app.listen(PORT);
-console.log('server running at http://localhost:' + PORT);
+app.listen(PORT, function () {
+  console.log('server running at http://localhost:' + PORT);
+});
