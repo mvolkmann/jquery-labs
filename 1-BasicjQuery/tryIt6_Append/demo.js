@@ -1,8 +1,7 @@
 /*global $: false, alert: false */
 'use strict';
 
-function addCD(artist, cd) {
-  var table = $('#newMusic');
+function addCD(table, artist, cd) {
   var tr = $('<tr><td>' + artist + '</td><td>' + cd + '</td></tr>');
   /*
   var tr = $('<tr>');
@@ -17,8 +16,9 @@ function addCD(artist, cd) {
 }
 
 $(function () {
-  addCD('The Arcade Fire', 'The Suburbs');
-  addCD('Joanna Newsom', 'Have One On Me');
+  var table = $('#newMusic');
+  addCD(table, 'The Arcade Fire', 'The Suburbs');
+  addCD(table, 'Joanna Newsom', 'Have One On Me');
 
   //$('#newMusic' tr td:eq(0)).css('color', 'red');
   $('#newMusic tr').each(function () {
